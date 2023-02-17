@@ -1,127 +1,66 @@
-@extends('layouts.app')
-
-@section('content')
-<div class="col-lg-12">
-    <div class="card">
-        <div class="card-header">
-            <a href="{{route('home')}}">Home</a> / <a href="">Create</a>
-        </div>
+@extends('layouts.app') @section('content')
+<div class="container">
+    <div class="col-md-12 mt-4">
+        <h5>
+            <a href="{{route('barang')}}">Master Barang</a> / <a href="{{route('barang.request.stock')}}">Request Stock Barang</a>
+        </h5>
+    </div>
+    <div class="card mt-4">
         <div class="card-body">
-            <form action="{{route('users.store')}}" method="post">
-                @csrf
+            <form>
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="nip">Nomer Referensi</label>
-                            <input type="number" name="nip" value="{{old('nip')}}" id="nip" class="form-control {{ $errors->has('nip') ? 'is-invalid' : '' }}" placeholder="">
-                            <!-- @if ($errors->has('nip'))
-                            <span class="invalid-feedback pl-5" role="alert">
-                                    <strong>{{ $errors->first('nip') }}</strong>
-                            <span>   
-                            @endif -->
+                            <label for="nomor-referensi">Nomor Referensi</label>
+                            <input class="form-control" id="nomor-referensi" />
                         </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="email">Nama Barang</label>
-                            <input type="email" name="email" value="{{old('email')}}" id="email" class="form-control {{ $errors->has('email') ? 'is-invalid' : '' }}" placeholder="Email...">
-                            <!-- @if ($errors->has('email'))
-                            <span class="invalid-feedback pl-5" role="alert">
-                                    <strong>{{ $errors->first('email') }}</strong>
-                            <span>   
-                            @endif -->
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="jenis_kelamin">Kategori</label>
-                            <select name="jenis_kelamin" id="jenis_kelamin" class="form-control {{ $errors->has('jenis_kelamin') ? 'is-invalid' : '' }}">
-                                <option value="">Pilih Kategori</option>
-                                <option value="Laki-Laki">Laki-Laki</option>
-                                <option value="Perempuan">Perempuan</option>
-                            </select>
-                            <!-- @if ($errors->has('jenis_kelamin'))
-                            <span class="invalid-feedback pl-5" role="alert">
-                                    <strong>{{ $errors->first('jenis_kelamin') }}</strong>
-                            <span>   
-                            @endif -->
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="jenis_kelamin">Brand</label>
-                            <select name="jenis_kelamin" id="jenis_kelamin" class="form-control {{ $errors->has('jenis_kelamin') ? 'is-invalid' : '' }}">
-                                <option value="">Pilih Brand</option>
-                                <option value="Laki-Laki">Laki-Laki</option>
-                                <option value="Perempuan">Perempuan</option>
-                            </select>
-                            <!-- @if ($errors->has('jenis_kelamin'))
-                            <span class="invalid-feedback pl-5" role="alert">
-                                    <strong>{{ $errors->first('jenis_kelamin') }}</strong>
-                            <span>   
-                            @endif -->
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="jenis_kelamin">UOM</label>
-                            <select name="jenis_kelamin" id="jenis_kelamin" class="form-control {{ $errors->has('jenis_kelamin') ? 'is-invalid' : '' }}">
-                                <option value="">Pilih UOM</option>
-                                <option value="Laki-Laki">Laki-Laki</option>
-                                <option value="Perempuan">Perempuan</option>
-                            </select>
-                            <!-- @if ($errors->has('jenis_kelamin'))
-                            <span class="invalid-feedback pl-5" role="alert">
-                                    <strong>{{ $errors->first('jenis_kelamin') }}</strong>
-                            <span>   
-                            @endif -->
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="jabatan">Harga</label>
-                            <input type="text" name="jabatan" value="{{old('jabatan')}}" id="jabatan" class="form-control{{ $errors->has('jabatan') ? 'is-invalid' : '' }}" placeholder="Jabatan...">
-                            <!-- @if ($errors->has('jabatan'))
-                            <span class="invalid-feedback pl-5" role="alert">
-                                    <strong>{{ $errors->first('jabatan') }}</strong>
-                            <span>   
-                            @endif -->
-                            
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="alamat">Image</label>
-                            <input type="file" name="alamat" value="{{old('alamat')}}" id="alamat" class="form-control{{ $errors->has('alamat') ? 'is-invalid' : '' }}" >
-                            <!-- @if ($errors->has('alamat'))
-                            <span class="invalid-feedback pl-5" role="alert">
-                                    <strong>{{ $errors->first('alamat') }}</strong>
-                            <span>   
-                            @endif -->
 
+                        <div class="form-group">
+                            <label for="kategori">Kategori</label>
+                            <input class="form-control" id="kategori" />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="uom">UOM</label>
+                            <input class="form-control" id="uom" />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="image">Harga</label>
+                            <input
+                                class="form-control"
+                                id="image"
+                                type="text"
+                            />
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="phone">Status</label>
-                            <input type="text" name="phone" value="{{old('phone')}}" id="phone" class="form-control{{ $errors->has('phone') ? 'is-invalid' : '' }}" >
-                            <!-- @if ($errors->has('phone'))
-                            <span class="invalid-feedback pl-5" role="alert">
-                                    <strong>{{ $errors->first('phone') }}</strong>
-                            <span>   
-                            @endif -->
-
+                            <label for="nama-barang">Nama Barang</label>
+                            <input class="form-control" id="nama-barang" />
                         </div>
-                    </div>
-                    <div class="col-md-6">
-                        <button type="submit" class="btn btn-outline-primary">
-                            Simpan
-                        </button>
-                        <!-- <a href="{{url()->previous()}}" class="btn btn-outline-secondary">
-                            Cancel
-                        </a> -->
+
+                        <div class="form-group">
+                            <label for="brand">Brand</label>
+                            <input class="form-control" id="brand" />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="harga">Kode Dan Nama Barang</label>
+                            <input class="form-control" id="harga" />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="status">Status</label>
+                            <input
+                                class="form-control"
+                                id="status"
+                                type="text"
+                            />
+                        </div>
                     </div>
                 </div>
+                <button class="btn btn-outline-info">Simpan Stock</button>
             </form>
         </div>
     </div>

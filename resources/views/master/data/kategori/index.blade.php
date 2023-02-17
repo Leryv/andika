@@ -4,23 +4,22 @@
 <div class="container">
     <div class="row justify-content-center mt-5">
         <div class="col-md-12">
-            <a href="{{route('brand')}}">Master Data</a> / <a href="{{route('brand.kategori')}}">Edit Kategori</a>
+            <a href="">Master Data</a> / <a href="{{route('kategori')}}">Edit Kategori</a>
         </div>
-        <div class="col-md-6 d-flex align-items-center mt-5">
-            <div class="form-group">
-                <label for="brand">Nama Brand</label>
-                <input type="text" name="brand" value="{{old('brand')}}" id="brand" class="form-control {{ $errors->has('brand') ? 'is-invalid' : '' }}" placeholder="Kategori...">
-                <!-- @if ($errors->has('email'))
-                <span class="invalid-feedback pl-5" role="alert">
-                <strong>{{ $errors->first('email') }}</strong>
-                <span>   
-                @endif -->
-                <button type="submit" class="btn btn-outline-primary mt-2">
-                    Simpan
-                </button>
+        <div class="col-md-4 mt-5">
+                <form action="">
+                    <div class="form-group">
+                        <label for="status">Kategori</label>
+                        <input type="text" name="status" value="{{old('phone')}}" id="phone" class="form-control{{ $errors->has('phone') ? 'is-invalid' : '' }}">
+                        <!-- @if ($errors->has('phone'))
+                        <span class="invalid-feedback pl-5" role="alert">
+                        <strong>{{ $errors->first('phone') }}</strong>
+                        <span>   
+                        @endif -->
+                    </div>
+                </form>
             </div>
-        </div>
-        <div class="col-md-6 d-flex align-items-center">
+        <div class="col-md-8 mt-5 d-flex align-items-center">
             <table class="table table-bordered ">
             <thead>
                 <tr>

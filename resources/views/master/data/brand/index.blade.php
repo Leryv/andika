@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center mt-5">
         <div class="col-md-12">
-            <a href="{{route('brand')}}">Master Data</a> / <a href="{{route('brand.brand')}}">Edit Brand</a>
+            <a href="">Master Data</a> / <a href="{{route('brand')}}">Edit Brand</a>
         </div>
         <div class="col-md-6 d-flex align-items-center mt-5">
             <div class="form-group">

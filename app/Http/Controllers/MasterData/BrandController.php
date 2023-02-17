@@ -2,14 +2,20 @@
 
 namespace App\Http\Controllers\MasterData;
 
+use App\Brand;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class BrandController extends Controller
 {
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
-        return view("master.data.index");
+        return view("master.data.brand.index");
     }
 
     /**
@@ -17,18 +23,64 @@ class BrandController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function kategori()
+    public function create()
     {
-        return view("master.data.kategori");
+        //
     }
 
-    public function brand()
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
     {
-        return view("master.data.brand");
-    }
-    public function satuan()
-    {
-        return view("master.data.satuan");
+        //
     }
 
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Brand  $brand
+     * @return \Illuminate\Http\Response
+     */
+    public function show(Brand $brand)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Brand  $brand
+     * @return \Illuminate\Http\Response
+     */
+    public function edit(Brand $brand)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Brand  $brand
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, Brand $brand)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Brand  $brand
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(Brand $brand)
+    {
+        //
+    }
 }

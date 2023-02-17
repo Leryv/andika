@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center mt-5">
         <h5 class="col-md-12">
-            <a href="">Master Barang</a> / <a href="{{route('brand')}}">Index</a>
+            <a href="">Master Barang</a> / <a href="{{route('barang')}}">Index</a>
         </h5>
         <div class="col-md-12 d-flex align-items-center mt-3">
             <table class="table table-bordered ">

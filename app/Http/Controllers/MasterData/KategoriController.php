@@ -1,21 +1,21 @@
 <?php
 
-namespace App\Http\Controllers\MasterBarang;
+namespace App\Http\Controllers\MasterData;
 
-use App\Barang;
+use App\Kategori;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class BarangController extends Controller
+class KategoriController extends Controller
 {
-     /**
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        return view("master.barang.index");
+        return view("master.data.kategori.index");
     }
 
     /**
@@ -24,16 +24,6 @@ class BarangController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        return view("master.barang.create");
-    }
-
-    public function mintastock()
-    {
-        return view("master.barang.request");
-    }
-
-    public function stock()
     {
         //
     }
@@ -52,33 +42,33 @@ class BarangController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Master\Barang  $barang
+     * @param  \App\Kategori  $kategori
      * @return \Illuminate\Http\Response
      */
-    public function show(Barang $barang)
+    public function show(Kategori $kategori)
     {
-        return view("master.barang.show");
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Master\Barang  $barang
+     * @param  \App\Kategori  $kategori
      * @return \Illuminate\Http\Response
      */
-    public function edit(Barang $barang)
+    public function edit(Kategori $kategori)
     {
-        return view("master.barang.edit");
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Master\Barang  $barang
+     * @param  \App\Kategori  $kategori
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Barang $barang)
+    public function update(Request $request, Kategori $kategori)
     {
         //
     }
@@ -86,10 +76,10 @@ class BarangController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Master\Barang  $barang
+     * @param  \App\Kategori  $kategori
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Barang $barang)
+    public function destroy(Kategori $kategori)
     {
         //
     }

@@ -20,24 +20,36 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', ['App\Http\Controllers\HomeController','index'])->name('home');
-Route::get('/satuan','SatuanController@index')->name('satuan');
-Route::get('/satuan/edit', 'SatuanController@edit')->name('satuan.edit');
-
 
 Route::resource('users', 'UserController');
-Route::get('barang', 'MasterBarang\BarangController@index')->name('barang');
-Route::get('barang/create', 'MasterBarang\BarangController@create')->name('barang.create');
-Route::get('barang/mintastock', 'MasterBarang\BarangController@mintastock')->name('barang.request');
-// Route::resource('barang', 'MasterBarang\BarangController');
-// Route::resource('stock', 'StockController');
-// Route::resource('satuan', 'SatuanController');
-// Route::resource('satuan', 'MasterData\SatuanController@satuan');
-// Route::resource('kategori', 'KategoriController');
-// Route::resource('brand', 'BrandController');
-Route::get('brand', 'MasterData\BrandController@index')->name('brand');
-Route::get('brand/brand', 'MasterData\BrandController@brand')->name('brand.brand');
-Route::get('brand/kategori', 'MasterData\BrandController@kategori')->name('brand.kategori');
-Route::get('brand/satuan', 'MasterData\BrandController@satuan')->name('brand.satuan');
-// Route::get('brand/edit', 'MasterData\BrandController@edit');
-Route::get('transaksi/in', 'MasterData\TransaksiController@in');
-Route::get('transaksi/out', 'MasterData\TransaksiController@out');
+Route::group(['prefix'=>'barang'], function(){
+    Route::get('', 'MasterBarang\BarangController@index')->name('barang');
+    Route::get('/create', 'MasterBarang\BarangController@create')->name('barang.create');
+    Route::get('/edit', 'MasterBarang\BarangController@edit')->name('barang.edit');
+    Route::get('/requeststock', 'MasterBarang\BarangController@mintastock')->name('barang.request.stock');
+    Route::get('/show', 'MasterBarang\BarangController@show')->name('barang.show');
+});
+
+
+// Route Master Data
+Route::group(['prefix'=>'kategori'], function(){
+    Route::get('', 'MasterData\KategoriController@index')->name('kategori');
+});
+
+Route::group(['prefix'=>'brand'], function(){
+    Route::get('', 'MasterData\BrandController@index')->name('brand');
+});
+
+Route::group(['prefix'=>'satuan'], function(){
+    Route::get('', 'MasterData\SatuanController@index')->name('satuan');
+});
+
+// Route::match(['get', 'post'], '/', function () {
+    //     //
+    // });
+
+// Route Transaksi
+Route::group(['prefix'=>'transaksi'], function(){
+    Route::get('in', 'MasterData\TransaksiController@in');
+    Route::get('out', 'MasterData\TransaksiController@out');
+});
