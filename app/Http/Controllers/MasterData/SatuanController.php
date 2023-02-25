@@ -11,11 +11,11 @@ class SatuanController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        return view("master.data.satuan.index");
+        $satuan = Satuan::all();
+        return view("master.data.satuan.index", compact("satuan"));
     }
 
     /**

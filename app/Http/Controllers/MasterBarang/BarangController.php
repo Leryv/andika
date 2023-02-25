@@ -8,14 +8,14 @@ use App\Http\Controllers\Controller;
 
 class BarangController extends Controller
 {
-     /**
+    /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        return view("master.barang.index");
+        $barangs = Barang::all();
+        return view("master.barang.index", compact('barangs'));
     }
 
     /**

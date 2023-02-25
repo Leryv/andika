@@ -1,0 +1,37 @@
+# Migration
+
+% Relasi Database
+    x    Untuk Merelasikan Database harus menggunakan increments dan integer
+    
+    -    $Child - Satuan =
+        !    $table->increments('id');
+        !    $table->bigIncrements('id');
+
+
+    -    $Parent - Barang =
+        !    $table->bigInteger('satuan_id')->unsigned();
+        !    $table->foreign('satuan_id')->references('id')->on('satuans')
+        !        ->onUpdate('CASCADE')->onDelete('CASCADE');
+
+            Atau
+
+        !    $table->integer('satuan_id')->unsigned();
+        !    $table->foreign('satuan_id')->references('id')->on('satuans')
+        !   ->onUpdate('CASCADE')->onDelete('CASCADE');
+
+
+    !!    jika child increments maka parent nya integer->unsigned();
+    !!    jika child bigIncrements maka parent nya bigInteger->unsigned();
+
+
+% Pengujian Database
+    x jika ingin menggunakan tinker dan menambahkan data pada database maka harus menggunakan
+    - protected $guarded 
+        untuk id
+    !! Jika tidak ditambahkan maka akan menimbulkan error berupa data butuh guarded
+
+
+    - protected $fillable
+        untuk mengisi data nya di tinker
+    !! Jika tidak ditambahkan maka akan menimbulkan error berupa field tidak bisa ditambahkan
+    

@@ -9,13 +9,14 @@ use App\Http\Controllers\Controller;
 class KategoriController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    * Display a listing of the resource.
+    *
+    //  * @return \Illuminate\Http\Response
+    */
     public function index()
     {
-        return view("master.data.kategori.index");
+        $kategori = Kategori::all();
+        return view("master.data.kategori.index", compact("kategori"));
     }
 
     /**

@@ -15,10 +15,11 @@ class CreateTransaksisTable extends Migration
     {
         Schema::create('transaksis', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('referensi');
-            $table->string('supplier');
-            $table->string('jumlah_permintaan');
-            $table->string('Harga');
+            $table->unsignedInteger('barang_id');
+            $table->string('kode_permintaan');
+            $table->string('jumlah');
+            $table->string('total');
+            $table->string('status');
             $table->timestamps();
         });
     }

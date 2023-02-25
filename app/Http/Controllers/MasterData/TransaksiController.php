@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\MasterData;
 
+use App\Transaksi;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -18,7 +19,8 @@ class TransaksiController extends Controller
     }
     public function in()
     {
-        return view("transaksi.in");
+        $transaksi = Transaksi::All();
+        return view("transaksi.in", compact("transaksi"));
     }
 
     /**
@@ -87,4 +89,3 @@ class TransaksiController extends Controller
         //
     }
 }
-

@@ -1,0 +1,47 @@
+Barang::create([
+    'no_reg'   => "BRG/20230423/001",
+    'nama'  => "Mesin Cuci",
+    "harga" =>    "200000",
+    "quantity" => 10,
+    "category_id"   =>  1,
+    "brand_id"  =>  1,
+    "satuan_id" => 1 
+])
+echo $barang->no_reg;
+
+
+$kategori=App\Kategori::create([    
+    'kode_kategori' => 'CTG/20230412/001',
+    "nama"  => "Office",
+]);
+
+$barang=App\Barang::create([    
+    'kode_barang'   => "BRG/20230423/001",
+    'nama'  => "Mesin Cuci",
+    "harga" =>    "200000",
+    "quantity" => 10,
+    "kategori_id"   =>  1,
+    "brand_id"  =>  1,
+    "satuan_id" => 1 
+]);
+
+$brand=App\Brand::create([    
+    'kode_brand' => 'BRA/20230412/001',
+    "nama_brand"  => "Samsung",
+]);
+$brand=App\Brand::All()   
+
+$satuan=App\Satuan::create([    
+    'kode_satuan' => 'STA/20230412/001',
+    "nama_satuan"  => "Sepaket",
+]);
+$barang->kategori
+$barang = Barang::first()
+
+Transaksi::create([
+    "barang_id"   =>  1,
+    'kode_permintaan'   => "TRS/20230423/001",
+    "jumlah" => "10",
+    "total" => "1" ,
+    "status" =>  "pending",
+])
